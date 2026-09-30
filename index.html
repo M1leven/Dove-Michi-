@@ -6,69 +6,191 @@
   <title>Dov'è Michi?</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, #203a5f 0%, #101722 45%, #080b10 100%);
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      margin: 0;
+      padding: 24px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
     }
 
     .card {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.10);
-      text-align: center;
-      max-width: 500px;
-      width: 85%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(14px);
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
     }
 
-    h1 {
-      font-size: 42px;
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
       margin-bottom: 10px;
     }
 
+    h1 {
+      margin: 0;
+      font-size: 52px;
+      line-height: 1;
+    }
+
     .location {
-      font-size: 32px;
-      font-weight: bold;
-      margin: 20px 0;
+      margin-top: 28px;
+      font-size: 34px;
+      font-weight: 700;
     }
 
-    .status {
+    .subtitle {
+      margin-top: 10px;
       font-size: 18px;
-      color: #555;
+      color: rgba(255,255,255,0.72);
     }
 
-    .updated {
-      margin-top: 30px;
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .info-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 8px;
+    }
+
+    .value {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .map-button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 20px;
+      background: white;
+      color: #111;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .map-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 18px;
       font-size: 13px;
-      color: #999;
+      color: rgba(255,255,255,0.45);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 40px;
+      }
+
+      .location {
+        font-size: 28px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 26px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="card">
+  <div class="container">
+    <div class="card">
 
-    <h1>📍 Dov'è Michi?</h1>
+      <div class="eyebrow">Michi Location Services</div>
 
-    <div class="location">
-      Lubiana 🇸🇮
+      <h1>📍 Dov'è Michi?</h1>
+
+      <div class="location">
+        Lubiana 🇸🇮
+      </div>
+
+      <div class="subtitle">
+        Attualmente in Slovenia.
+      </div>
+
+      <div class="grid">
+
+        <div class="info-box">
+          <div class="label">Qui fino a</div>
+          <div class="value">Sabato 3 Ottobre</div>
+        </div>
+
+        <div class="info-box">
+          <div class="label">Prossima tappa</div>
+          <div class="value">Lago di Bled 🏔️</div>
+        </div>
+
+        <div class="info-box">
+          <div class="label">Periodo</div>
+          <div class="value">3–4 Ottobre</div>
+        </div>
+
+        <div class="info-box">
+          <div class="label">Stato</div>
+          <div class="value">Esplorazione in corso</div>
+        </div>
+
+      </div>
+
+      <a
+        class="map-button"
+        href="https://www.google.com/maps/search/?api=1&query=Ljubljana"
+        target="_blank"
+      >
+        🗺️ Apri sulla mappa
+      </a>
+
     </div>
 
-    <div class="status">
-      Attualmente in giro per la Slovenia.
+    <div class="footer">
+      Ultimo aggiornamento: 30 settembre 2026 · accuratezza dipendente dalla memoria di Michi
     </div>
-
-    <div class="updated">
-      Ultimo aggiornamento: 30 settembre 2026
-    </div>
-
   </div>
 
+</body>
+</html>
 </body>
 </html>
